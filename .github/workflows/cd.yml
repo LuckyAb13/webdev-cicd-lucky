@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Deploy to GitHub Pages
+      - name: Build and Create Deployment Files
         run: |
-          npm run build
           mkdir -p out
           echo "Hello from CI/CD Deployment" > out/index.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
