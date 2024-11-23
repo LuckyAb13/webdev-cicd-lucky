@@ -15,13 +15,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 16
 
-      - name: Build and Create Deployment Files
+      - name: Deploy to GitHub Pages
         run: |
+          npm run build
           mkdir -p out
           echo "Hello from CI/CD Deployment" > out/index.html
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
